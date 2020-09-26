@@ -5,7 +5,7 @@ using GerenciadorDeCondominios.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace GerenciadorDeCondominio.Infrastructure.Mapeamentos
+namespace GerenciadorDeCondominios.Infrastructure.Mapeamentos
 {
     public class HistoricosRecursosMap : IEntityTypeConfiguration<HistoricoRecursos>
     {

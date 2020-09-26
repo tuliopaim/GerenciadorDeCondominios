@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace GerenciadorDeCondominio.Infrastructure.Mapeamentos
+namespace GerenciadorDeCondominios.Infrastructure.Mapeamentos
 {
     public class MesMap : IEntityTypeConfiguration<Mes>
     {

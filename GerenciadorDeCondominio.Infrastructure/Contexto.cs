@@ -1,4 +1,4 @@
-﻿using GerenciadorDeCondominio.Infrastructure.Mapeamentos;
+﻿using GerenciadorDeCondominios.Infrastructure.Mapeamentos;
 using GerenciadorDeCondominios.Domain.Entidades;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace GerenciadorDeCondominio.Infrastructure
+namespace GerenciadorDeCondominios.Infrastructure
 {
     public class Contexto : IdentityDbContext<Usuario, Funcao, string>
     {

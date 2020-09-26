@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace GerenciadorDeCondominio.Infrastructure.Migrations
+namespace GerenciadorDeCondominios.Infrastructure.Migrations
 {
     public partial class criacaoDB : Migration
     {
