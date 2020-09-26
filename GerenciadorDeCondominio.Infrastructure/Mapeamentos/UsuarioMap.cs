@@ -20,7 +20,7 @@ namespace GerenciadorDeCondominio.Infrastructure.Mapeamentos
             builder.Property(u => u.Status).IsRequired();
 
             builder.HasMany(u => u.ProprietarioApartamentos).WithOne(u => u.Proprietario);
-            builder.HasMany(u => u.MoradoresApartamentos).WithOne(u => u.Morador);
+            builder.HasMany(u => u.MoradorApartamentos).WithOne(u => u.Morador);
             builder.HasMany(u => u.Veiculos).WithOne(u => u.Usuario);
             builder.HasMany(u => u.Eventos).WithOne(u => u.Usuario);
             builder.HasMany(u => u.Pagamentos).WithOne(u => u.Usuario);

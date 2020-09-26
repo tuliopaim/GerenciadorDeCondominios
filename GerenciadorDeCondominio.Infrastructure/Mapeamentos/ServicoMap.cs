@@ -14,7 +14,7 @@ namespace GerenciadorDeCondominio.Infrastructure.Mapeamentos
             builder.HasKey(s => s.Id);
 
             builder.Property(s => s.Nome).IsRequired().HasMaxLength(30);
-            builder.Property(s => s.Valor).IsRequired();
+            builder.Property(s => s.Valor).IsRequired().HasColumnType("NUMERIC(10,2)");
             builder.Property(s => s.Status).IsRequired();
             builder.Property(s => s.UsuarioId).IsRequired();
 

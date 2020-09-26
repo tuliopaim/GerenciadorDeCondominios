@@ -21,12 +21,15 @@ namespace GerenciadorDeCondominio.Infrastructure.Mapeamentos
 
             builder.HasOne(a => a.Proprietario)
                 .WithMany(a => a.ProprietarioApartamentos)
-                .HasForeignKey(a => a.ProprietarioId);
+                .HasForeignKey(a => a.ProprietarioId)
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasOne(a => a.Morador)
-                .WithMany(a => a.MoradoresApartamentos)
-                .HasForeignKey(a => a.MoradorId);
+                .WithMany(a => a.MoradorApartamentos)
+                .HasForeignKey(a => a.MoradorId)
+                .OnDelete(DeleteBehavior.NoAction);
 
+            builder.ToTable("Apartamentos");
         }
     }
 }

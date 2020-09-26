@@ -13,7 +13,7 @@ namespace GerenciadorDeCondominio.Infrastructure.Mapeamentos
         {
             builder.HasKey(v => v.Id);
 
-            builder.Property(h => h.Valor).IsRequired();
+            builder.Property(h => h.Valor).IsRequired().HasColumnType("NUMERIC(10,2)"); ;
             builder.Property(h => h.Tipo).IsRequired();
             builder.Property(h => h.Dia).IsRequired();
             builder.Property(h => h.Ano).IsRequired();
