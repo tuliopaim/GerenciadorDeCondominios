@@ -52,7 +52,6 @@ namespace GerenciadorDeCondominios.Web.Controllers
                     await foto.CopyToAsync(fileStream);
 
                     model.Foto = "~/imagens/" + nomeFoto;
-
                 }
 
                 var usuario = new Usuario();
@@ -76,6 +75,15 @@ namespace GerenciadorDeCondominios.Web.Controllers
                         await _usuarioRepositorio.LogarUsuario(usuario, false);
 
                         return RedirectToAction("Index", "Usuarios");
+                    }
+                    else
+                    {
+                        foreach (var erro in usuarioCriado.Errors)
+                        {
+                            ModelState.AddModelError("", erro.Description);
+                        }
+
+                        return View(model);
                     }
                 }
 

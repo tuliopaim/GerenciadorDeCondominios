@@ -14,14 +14,12 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="~/css/site.css" rel="stylesheet" />
-        <script src="~/js/site.js"></script>
     </enviroment>
 
     <enviroment exclude="Development">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="~/js/site.js"></script>
-        <link href="~/css/site.css" rel="stylesheet" />
     </enviroment>
 
 </head>
@@ -36,81 +34,81 @@
             </div>
 
             <div class="">
-                <form asp-action="Registro" enctype="multipart/form-data"></form>
-                <div class="campos">
-                    <div class="red-text text-darken-4" asp-validation-summary="ModelOnly"></div>
+                <form asp-action="Registro" asp-controller="Usuarios" enctype="multipart/form-data">
+                    <div class="campos">
+                        <div class="red-text text-darken-4" asp-validation-summary="ModelOnly"></div>
 
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input asp-for="Nome" class="validade" id="Nome" />
-                            <label asp-for="Nome" id="Nome"></label>
-                            <span asp-validation-for="Nome" class="red-text text-darken-4"></span>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input asp-for="CPF" class="validade" id="CPF"/>
-                            <label asp-for="CPF" id="CPF"></label>
-                            <span asp-validation-for="CPF" class="red-text text-darken-4"></span>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="file-field input-field col s12">
-                            <div class="btn-small">
-                                <span>Selecione sua foto</span>
-                                <input asp-for="Foto" type="file" class="validate" id="foto" />
-                            </div>
-
-                            <div class="file-path-wrapper">
-                                <input type="text" class="file-path validate" />
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input asp-for="Nome" class="validade" id="Nome" />
+                                <label asp-for="Nome" id="Nome"></label>
+                                <span asp-validation-for="Nome" class="red-text text-darken-4"></span>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input asp-for="Telefone" class="validade" id="Telefone" />
-                            <label asp-for="Telefone" id="Telefone"></label>
-                            <span asp-validation-for="Telefone" class="red-text text-darken-4"></span>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input asp-for="CPF" class="validade" id="CPF" />
+                                <label asp-for="CPF" id="CPF"></label>
+                                <span asp-validation-for="CPF" class="red-text text-darken-4"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="file-field input-field col s12">
+                                <div class="btn-small">
+                                    <span>Selecione sua foto</span>
+                                    <input asp-for="Foto" type="file" class="validate" id="foto" />
+                                </div>
+
+                                <div class="file-path-wrapper">
+                                    <input type="text" class="file-path validate" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input asp-for="Telefone" class="validade" id="Telefone" />
+                                <label asp-for="Telefone" id="Telefone"></label>
+                                <span asp-validation-for="Telefone" class="red-text text-darken-4"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input asp-for="Email" class="validade" id="Email" type="email" />
+                                <label asp-for="Email" id="Email"></label>
+                                <span asp-validation-for="Email" class="red-text text-darken-4"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input asp-for="Senha" class="validade" id="Senha" type="password" />
+                                <label asp-for="Senha" id="Senha"></label>
+                                <span asp-validation-for="Senha" class="red-text text-darken-4"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input asp-for="SenhaConfirmada" class="validade" id="SenhaConfirmada" type="password" />
+                                <label asp-for="SenhaConfirmada" id="SenhaConfirmada"></label>
+                                <span asp-validation-for="SenhaConfirmada" class="red-text text-darken-4"></span>
+                            </div>
+                        </div>
+
+                        <div class="botoes">
+                            <button type="submit" class="waves-effect waves-ligth btn-small green darken-4">
+                                Registrar
+                            </button>
+
+                            <a asp-controller="Usuarios" asp-action="Login">Já possuo uma conta</a>
+
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input asp-for="Email" class="validade" id="Email" type="email" />
-                            <label asp-for="Email" id="Email"></label>
-                            <span asp-validation-for="Email" class="red-text text-darken-4"></span>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input asp-for="Senha" class="validade" id="Senha" type="password" />
-                            <label asp-for="Senha" id="Senha" ></label>
-                            <span asp-validation-for="Senha" class="red-text text-darken-4"></span>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input asp-for="SenhaConfirmada" class="validade" id="SenhaConfirmada" type="password" />
-                            <label asp-for="SenhaConfirmada" id="SenhaConfirmada"></label>
-                            <span asp-validation-for="SenhaConfirmada" class="red-text text-darken-4"></span>
-                        </div>
-                    </div>
-
-                    <div class="botoes">
-                        <button type="submit" class="waves-effect waves-ligth btn-small green darken-4">
-                            Registrar
-                        </button>
-
-                        <a asp-controller="Usuarios" asp-action="Login">Já possuo uma conta</a>
-
-                    </div>
-
-                </div>
+                </form>
             </div>
 
         </div>
@@ -121,6 +119,7 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
             <script src="~/lib/jQuery-Mask-Plugin-master/dist/jquery.mask.js"></script>
             <script src="~/js/IniciarMascaras.js"></script>
+            <script src="~/js/site.js"></script>
         </enviroment>
 
         <enviroment exclude="Development">
@@ -128,6 +127,7 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             <script src="~/lib/jQuery-Mask-Plugin-master/dist/jquery.mask.js"></script>
             <script src="~/js/IniciarMascaras.js"></script>
+            <link href="~/css/site.css" rel="stylesheet" />
         </enviroment>
     </body>
 

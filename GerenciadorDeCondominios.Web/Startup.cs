@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GerenciadorDeCondominios.Domain.Entidades;
 using GerenciadorDeCondominios.Infrastructure;
 using GerenciadorDeCondominios.Infrastructure.Interfaces;
 using GerenciadorDeCondominios.Infrastructure.Repositorios;
@@ -28,7 +29,11 @@ namespace GerenciadorDeCondominios.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<Contexto>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddIdentity<Usuario, Funcao>().AddEntityFrameworkStores<Contexto>();
             services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
+
+            services.AddAuthentication();
+            services.AddAuthorization();
 
             services.AddControllersWithViews();
         }
@@ -51,6 +56,7 @@ namespace GerenciadorDeCondominios.Web
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
