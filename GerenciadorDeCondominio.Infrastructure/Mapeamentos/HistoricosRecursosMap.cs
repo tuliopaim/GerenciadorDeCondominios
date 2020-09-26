@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace GerenciadorDeCondominio.Infrastructure.Mapeamentos
 {
-    public class HistoricoRecursosMap : IEntityTypeConfiguration<HistoricoRecursos>
+    public class HistoricosRecursosMap : IEntityTypeConfiguration<HistoricoRecursos>
     {
         public void Configure(EntityTypeBuilder<HistoricoRecursos> builder)
         {
@@ -23,7 +23,7 @@ namespace GerenciadorDeCondominio.Infrastructure.Mapeamentos
                 .WithMany(h => h.HistoricoRecurso)
                 .HasForeignKey(h => h.MesId);
 
-            builder.ToTable("HistoricoRecursos");
+            builder.ToTable("HistoricosRecursos");
 
         }
     }
