@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GerenciadorDeCondominio.Infrastructure\GerenciadorDeCondominio.Infrastructure.csproj" />
+    <ProjectReference Include="..\GerenciadorDeCondominio.Infrastructure\GerenciadorDeCondominios.Infrastructure.csproj" />
     <ProjectReference Include="..\GerenciadorDeCondominios.Domain\GerenciadorDeCondominios.Domain.csproj" />
   </ItemGroup>
 
