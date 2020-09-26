@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GerenciadorDeCondominios.Infrastructure;
+using GerenciadorDeCondominios.Infrastructure.Interfaces;
+using GerenciadorDeCondominios.Infrastructure.Repositorios;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,8 @@ namespace GerenciadorDeCondominios.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<Contexto>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
+
             services.AddControllersWithViews();
         }
 
