@@ -13,11 +13,11 @@ namespace GerenciadorDeCondominios.Domain.Entidades
         public bool PrimeiroAcesso { get; set; }
         public StatusConta Status { get; set; }
 
-        public virtual ICollection<Apartamento> MoradoresApartamento { get; set; }
-        public virtual ICollection<Apartamento> ProprietariosApartamento { get; set; }
+        public virtual ICollection<Apartamento> MoradoresApartamentos { get; set; }
+        public virtual ICollection<Apartamento> ProprietarioApartamentos { get; set; }
         public virtual ICollection<Veiculo> Veiculos { get; set; }
         public virtual ICollection<Evento> Eventos { get; set; }
         public virtual ICollection<Servico> Servicos { get; set; }
-        public virtual ICollection<Pagamento> Pagamento { get; set; }
+        public virtual ICollection<Pagamento> Pagamentos { get; set; }
     }
 }
